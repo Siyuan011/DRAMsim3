@@ -38,6 +38,7 @@ class Controller {
     std::pair<uint64_t, int> ReturnDoneTrans(uint64_t clock);
 
     int channel_id_;
+    bool trace_EOF;
 
    private:
     uint64_t clk_;

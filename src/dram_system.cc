@@ -145,6 +145,13 @@ bool JedecDRAMSystem::AddTransaction(uint64_t hex_addr, bool is_write) {
 }
 
 void JedecDRAMSystem::ClockTick() {
+    if (trace_EOF){
+        for (size_t i = 0; i < ctrls_.size(); i++){
+            ctrls_[i]->trace_EOF = true;
+        }
+    }
+
+
     for (size_t i = 0; i < ctrls_.size(); i++) {
         // look ahead and return earlier
         while (true) {

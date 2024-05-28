@@ -84,6 +84,8 @@ void TraceBasedCPU::ClockTick() {
                 memory_system_.AddTransaction(trans_.addr, trans_.is_write);
             }
         }
+    }else{
+        memory_system_.trace_EOF = true; //siyuan
     }
     clk_++;
     return;
