@@ -127,18 +127,18 @@ if __name__ == '__main__':
             print('Cannot use output path:' + args.output_dir)
             print(e)
             exit(1)
-    print("Output directory: ", args.output_dir)
+    # print("Output directory: ", args.output_dir)
 
     stream_types = {'r': 'random', 'random': 'random',
                     's': 'stream', 'stream': 'stream',
                     'm': 'mix', 'mix': 'mix'}
     stream_type = stream_types.get(args.stream_type, 'random')
-    print("Address stream type: ", stream_type)
+    # print("Address stream type: ", stream_type)
 
     formats = ['dramsim2', 'dramsim3', 'ramulator', 'usimm', 'drsim']
     if args.format != 'all':
         formats = [args.format]
-    print("Trace format(s):", formats)
+    # print("Trace format(s):", formats)
 
     files = {}
     for f in formats:
@@ -147,7 +147,7 @@ if __name__ == '__main__':
         file_name = args.output_file_name
         if f == 'dramsim2':
             file_name = 'mase_' + file_name
-        print("Write to file: ", file_name)
+        # print("Write to file: ", file_name)
         files[f] = os.path.join(args.output_dir, file_name)
 
     # open files
